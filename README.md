@@ -2,9 +2,9 @@
 title: Telegram Bot
 description: An ExpressJS server with a Telegram bot
 tags:
-  - express
-  - telegraf
-  - typescript
+    - express
+    - telegraf
+    - typescript
 ---
 
 # Telegram bot example
@@ -15,15 +15,15 @@ This example starts a [Telegram](https://telegram.org/) bot on an [ExpressJS](ht
 
 ## ✨ Features
 
-- Telegraf (library to interact with the Telegram bot API)
-- Express
-- TypeScript
+-   Telegraf (library to interact with the Telegram bot API)
+-   Express
+-   TypeScript
 
 ## 💁‍♀️ How to use
 
-- Install dependencies `yarn`
-- Connect to your Railway project `railway link`
-- Start the development server `railway run yarn dev`
+-   Install dependencies `yarn`
+-   Connect to your Railway project `railway link`
+-   Start the development server `railway run yarn dev`
 
 ## 📝 Notes
 
