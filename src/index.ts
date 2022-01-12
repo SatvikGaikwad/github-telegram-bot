@@ -9,7 +9,8 @@ import { Telegraf } from "telegraf";
 if (!process.env.TELEGRAM_BOT_TOKEN) throw new Error("Please add a bot token");
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
-bot.start(ctx => ctx.reply("Welcome"));
+bot.start(ctx => ctx.reply("Welcome to 🌟 Github Stars Bot 🌟"));
+
 bot.hears("hello", ctx => {
   ctx.reply("Hello to you too!");
 });
@@ -17,7 +18,7 @@ bot.hears("hello", ctx => {
 bot.launch();
 
 const app = express();
-const port = process.env.PORT || 3333;
+const port = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
