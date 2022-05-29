@@ -2,14 +2,13 @@
     "name": "telegram-bot",
     "private": true,
     "version": "1.0.0",
-    "main": "index.js",
-    "author": "Faraz Patankar",
+    "author": "Satvik Gaikwad",
     "license": "MIT",
     "scripts": {
         "dev": "nodemon src/index.ts",
         "build": "tsc",
         "start": "node dist/index.js",
-        "lint": "eslint --cache --fix src/*.ts && prettier --write ."
+        "lint": "eslint --cache src/*.ts && prettier --check ."
     },
     "dependencies": {
         "axios": "^0.24.0",
