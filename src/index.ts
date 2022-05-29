@@ -12,20 +12,18 @@ const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 bot.start((ctx) => ctx.reply("Welcome to 🌟 Github Stars Bot 🌟"));
 
 bot.hears("help", (ctx) => {
-    ctx.replyWithMarkdown(`
-  🌟 *Github Stars Bot* 🌟
-
-      *Commands:*
-          /get - Get Github Stars
-          /help - Get Help
-      *Usage:*
+    ctx.replyWithMarkdown(`🌟 *Github Stars Bot* 🌟
+*Commands:*
+          /get - Get Github Stars Count
+          /forks - Get Github Forks Count
+          /help - Returns this message
+*Usage:*
           /get:
             \`\`\` /get user/repo \`\`\`
             \`\`\` /get torvalds/linux \`\`\`
-          /help:
-            \`\`\`
-  /help
-            \`\`\`
+          /forks:
+            \`\`\` /forks user/repo \`\`\`
+            \`\`\` /forks torvalds/linux \`\`\`
   `);
 });
 
