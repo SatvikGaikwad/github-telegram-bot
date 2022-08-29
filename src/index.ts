@@ -46,14 +46,14 @@ bot.help((ctx) => {
 bot.command("get", async (ctx) => {
     // console.log(ctx);
     const repo = ctx.update.message.text.substring(5);
-    if (!repo) ctx.reply(`try "/get torvalds/linux"`);
+    if (!repo) ctx.reply(`try \`\`\` /get torvalds/linux \`\`\` `);
     else ctx.reply(await fetch(repo, "Stars"));
 });
 
 bot.command("forks", async (ctx) => {
     // console.log(ctx);
     const repo = ctx.update.message.text.substring(7);
-    if (!repo) ctx.reply(`try "/forks torvalds/linux"`);
+    if (!repo) ctx.reply(`try \`\`\` /forks torvalds/linux \`\`\` `);
     else ctx.reply(await fetch(repo, "Forks"));
 });
 
