@@ -1,24 +1,24 @@
 import axios from "axios";
 
+const headers = {
+    Authorization: `token ${process.env.GITHUB_TOKEN}`
+};
+
 const fetch = async (repo: string, type: string): Promise<string> => {
-    if (type == "Stars") {
-        const data = await axios.get(`https://api.github.com/repos/${repo}`);
-        if (data.data.stargazers_count !== undefined) {
-            const stars = data.data.stargazers_count;
-            return `Repo: ${repo} has ${stars} stars`;
+    try {
+        const response = await axios.get(`https://api.github.com/repos/${repo}`, { headers });
+        const data = response.data;
+
+        if (type === "Stars" && data.stargazers_count !== undefined) {
+            return `Repo: ${repo} has ${data.stargazers_count} stars`;
+        } else if (type === "Forks" && data.forks_count !== undefined) {
+            return `Repo: ${repo} has ${data.forks_count} forks`;
         } else {
-            return "Enter a valid repository";
+            return "Enter a valid repository type (Stars or Forks)";
         }
-    } else if (type == "Forks") {
-        const data = await axios.get(`https://api.github.com/repos/${repo}`);
-        if (data.data.forks_count !== undefined) {
-            const stars = data.data.forks_count;
-            return `Repo: ${repo} has ${stars} forks`;
-        } else {
-            return "Enter a valid repository";
-        }
-    } else {
-        return "Enter a valid repository";
+    } catch (error) {
+        return `Error: ${error.response?.status} - ${error.response?.data.message || "Unknown error"}`;
     }
 };
+
 export default fetch;
